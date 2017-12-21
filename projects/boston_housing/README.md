@@ -1,46 +1,45 @@
-# Machine Learning Engineer Nanodegree
-# Model Evaluation and Validation
-## Project: Predicting Boston Housing Prices
+# Nanodegree Engenheiro de Machine Learning
+# Modelo de avaliação e validação
+## Projeto: Prevendo o preço de imóveis de Boston
 
-### Install
+### Instalação
 
-This project requires **Python 2.7**(if you complete this project in Python 3.x, you will have to update the code in various places including all relevant print statements) and the following Python libraries installed:
+Este projeto requer **Python 2.7** (se você completar o projeto em Python 3.x, você precisará fazer o update do código em vários pontos, incluindo todos os prints relevantes) e as seguintes bibliotecas Python:
 
+- [Python 2.7](https://www.python.org/download/releases/2.7/)
 - [NumPy](http://www.numpy.org/)
-- [Pandas](http://pandas.pydata.org/)
-- [matplotlib](http://matplotlib.org/)
+- [pandas](http://pandas.pydata.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
+- [matplotlib](http://matplotlib.org/)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
+Você também precisará ter software instalado para rodar e executar um [Jupyter Notebook](http://ipython.org/notebook.html)
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
+Se você ainda não tem o Python instalado, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads), que já tem os pacotes acima incluídos. Certifique-se de selecionar o instalador Python 2.7, não o 3.x.
 
-### Code
+### Código
 
-Template code is provided in the `boston_housing.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `housing.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
+Um modelo do código é fornecido no arquivo notebook `boston_housing_PT.ipynb`. Você também precisará usar o arquivo Python `visuals.py` e o arquivo de dados `housing.csv` para completar seu trabalho. Mesmo que parte do código já tenha sido fornecida para ajudá-lo a começar, você precisará implementar funcionalidades adicionais em alguns pontos para conseguir completar o projeto com sucesso. Note que o código incluído em `visuals.py` foi feito para ser utilizado do jeito que está, sem manipulação por parte dos estudantes. Mas, se você estiver interessado em saber como as visualizações são criadas no notebook, fique à vontade para explorar esse arquivo Python.
 
-### Run
-
-In a terminal or command window, navigate to the top-level project directory `boston_housing/` (that contains this README) and run one of the following commands:
+### Execução
+Em um terminal ou janela de comando, navegue até o diretório raiz de projeto `boston_housing/` (que contém este README) e execute os seguintes comandos:
 
 ```bash
-ipython notebook boston_housing.ipynb
+ipython notebook boston_housing_PT.ipynb
 ```  
-or
+ou
 ```bash
-jupyter notebook boston_housing.ipynb
+jupyter notebook boston_housing_PT.ipynb
 ```
 
-This will open the Jupyter Notebook software and project file in your browser.
+Isso abrirá o o software e arquivo de projeto Jupyter Notebook em seu navegador.
 
-### Data
+### Dados
+O conjunto de dados do mercado imobiliário de Boston consiste em 489 pontos de dados, sendo que cada ponto possui 3 atributos. Este conjunto de dados é uma versão modificada do conjunto de dados do mercado imobiliário de Boston encontrado no [Repositório de machine learning da UCI](https://archive.ics.uci.edu/ml/datasets/Housing).
 
-The modified Boston housing dataset consists of 489 data points, with each datapoint having 3 features. This dataset is a modified version of the Boston Housing dataset found on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Housing).
+**Atributos**
+1.  `RM`: número médio de cômodos por casa
+2. `LSTAT`: porcentagem da população considerada de baixa renda
+3. `PTRATIO`: razão estudante/professor da cidade
 
-**Features**
-1.  `RM`: average number of rooms per dwelling
-2. `LSTAT`: percentage of population considered lower status
-3. `PTRATIO`: pupil-teacher ratio by town
-
-**Target Variable**
-4. `MEDV`: median value of owner-occupied homes
+**Variável-alvo**
+4. `MEDV`: valor mediano das casas

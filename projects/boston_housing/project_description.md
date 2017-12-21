@@ -1,63 +1,61 @@
-# Content: Model Evaluation and Validation
-## Project: Predicting Boston Housing Prices
+# Conteúdo: Modelo de avaliação e validação
+## Projeto: Prevendo o preço de imóveis de Boston
 
-## Project Overview
-In this project, you will apply basic machine learning concepts on data collected for housing prices in the Boston, Massachusetts area to predict the selling price of a new home. You will first explore the data to obtain important features and descriptive statistics about the dataset. Next, you will properly split the data into testing and training subsets, and determine a suitable performance metric for this problem. You will then analyze performance graphs for a learning algorithm with varying parameters and training set sizes. This will enable you to pick the optimal model that best generalizes for unseen data. Finally, you will test this optimal model on a new sample and compare the predicted selling price to your statistics.
+## Visão geral do projeto
+Neste projeto, você aplicará conceitos básicos de Machine Learning em dados coletados de preços de casas em Boston, em Massachusetts, para prever o preço de venda de uma casa nova. Primeiro, você irá explorar os dados para obter atributos importantes  e estatísticas descritivas sobre o conjunto de dados. Depois, dividirá adequadamente os dados entre dois subconjuntos, o de testes e o de treinamento, e determinará uma métrica adequada para esse problema. Você, então, analisará o desempenho de um algoritmo de aprendizagem com parâmetros variados e tamanho do conjunto de treinamento. Isso permitirá que você escolha o modelo ótimo que melhor generaliza os dados desconhecidos. Por último, você testará o modelo ótimo em uma nova amostra e comparará os preços de venda previstos com as suas estatísticas.
 
-## Project Highlights
-This project is designed to get you acquainted to working with datasets in Python and applying basic machine learning techniques using NumPy and Scikit-Learn. Before being expected to use many of the available algorithms in the sklearn library, it will be helpful to first practice analyzing and interpreting the performance of your model.
+## Destaques do projeto
+Este projeto foi projetado para que você se familiarize em trabalhar com conjuntos de dados em Python e aplicar técnicas básicas de Machine Learning utilizando NumPy e Scikit-Learn. Antes de saber usar muitos dos algoritmos disponíveis na biblioteca sklearn, será de grande ajuda, primeiro, praticar análise e interpretação do desempenho de seu modelo.
 
-Things you will learn by completing this project:
+O que você aprenderá ao concluir este projeto:
 
-- How to use NumPy to investigate the latent features of a dataset.
-- How to analyze various learning performance plots for variance and bias.
-- How to determine the best-guess model for predictions from unseen data.
-- How to evaluate a model's performance on unseen data using previous data.
+- Como utilizar o NumPy para investigar os features latentes de um conjunto de dados.
+- Como analisar vários gráficos de desempenho de aprendizagem para variância e viés.
+- Como determinar o modelo que faz as melhores estimativas para dados desconhecidos.
+- Como avaliar o desempenho do modelo em dados desconhecidos utilizando dados anteriores.
 
-## Description
-The Boston housing market is highly competitive, and you want to be the best real estate agent in the area. To compete with your peers, you decide to leverage a few basic machine learning concepts to assist you and a client with finding the best selling price for their home. Luckily, you\'ve come across the Boston Housing dataset which contains aggregated data on various features for houses in Greater Boston communities, including the median value of homes for each of those areas. Your task is to build an optimal model based on a statistical analysis with the tools available. This model will then be used to estimate the best selling price for your clients\' homes.
+## Descrição
+O mercado imobiliário de Boston é altamente competitivo e você quer ser o melhor corretor de imóveis da região. Para competir com seus colegas, você decidiu elencar alguns conceitos básicos de Machine Learning para ajudar você e seu cliente a acharem o melhor preço de venda para a casa dele. Com sorte, você se deparou com o conjunto de dados de habitação de Boston, que contém dados agregados de várias características para casas das comunidades da Grande Boston, incluindo o valor médio das casas para cada uma das regiões. Sua tarefa é construir um modelo ótimo baseado na análise das estatísticas com as ferramentas disponíveis. Esse modelo será, então, usado para estimar o melhor preço de venda para a casa de seus clientes.
 
-## Software and Libraries
-This project uses the following software and Python libraries:
+## Software e bibliotecas
+Este projeto usará o seguinte software e bibliotecas de Python:
 
 - [Python 2.7](https://www.python.org/download/releases/2.7/)
 - [NumPy](http://www.numpy.org/)
 - [pandas](http://pandas.pydata.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 - [matplotlib](http://matplotlib.org/)
+- [Jupyter Notebook](http://ipython.org/notebook.html)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html).
+Caso você não tenha o Python instalado ainda, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads) de Python, que já tem os pacotes acima inclusos, além de outros. Certifique-se de que você selecionou o instalador do Python 2.7, e não o instalador do Python 3.x.
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
+## Começando o projeto
+Para essa tarefa, você encontrará o arquivo `boston_housing.zip`, que contém os arquivos necessários do projeto para download na seção Recursos. *Você também pode visitar nosso [GitHub de projetos de Machine Learning](https://github.com/udacity/br-machine-learning) para ter acesso a todos os projetos disponíveis para este Nanodegree.*
 
-## Starting the Project
+Este projeto contém três arquivos:
 
-For this assignment, you can find the `boston_housing` folder containing the necessary project files on the [Machine Learning projects GitHub](https://github.com/udacity/machine-learning), under the `projects` folder. You may download all of the files for projects we'll use in this Nanodegree program directly from this repo. Please make sure that you use the most recent version of project files when completing a project!
+- `boston_housing_PT.ipynb`: esse é o arquivo principal, em que você irá executar seu projeto.
+- `housing.csv`: o conjunto de dados do projeto. Você vai carregar esses dados no Notebook.
+- `visuals.py`: esse script de Python contém funções auxiliares que criarão as visualizações necessárias.
 
-This project contains three files:
+No Terminal ou no prompt de comando, navegue até a pasta que contém os arquivos do projeto e, então, utilize o comando `jupyter notebook boston_housing_PT.ipynb` para abrir uma nova janela ou aba do navegador para trabalhar com seu Notebook. Outra alternativa é utilizar o comando `jupyter notebook` ou `ipython notebook` e navegar até o arquivo do Notebook na janela do navegador que se abrir. Siga as instruções no Notebook e responda a cada uma das perguntas apresentadas para concluir o projeto com sucesso. O arquivo **README** também foi incluído e contém informações necessárias adicionais ou instruções para o projeto.
 
-- `boston_housing.ipynb`: This is the main file where you will be performing your work on the project.
-- `housing.csv`: The project dataset. You'll load this data in the notebook.
-- `visuals.py`: This Python script provides supplementary visualizations for the project. Do not modify.
+## Enviando o projeto
+### Avaliação
+Seu projeto será avaliado por um revisor da Udacity, de acordo com a [rubrica do projeto "Prevendo o preços de imóveis residenciais em Boston"](https://review.udacity.com/#!/rubrics/389/view). Certifique-se de ler a rubrica cuidadosamente e se autoavaliar antes de enviar o projeto. Seu projeto deve atender às especificações da rubrica para que seja aprovado.
 
-In the Terminal or Command Prompt, navigate to the folder containing the project files, and then use the command `jupyter notebook boston_housing.ipynb` to open up a browser window or tab to work with your notebook. Alternatively, you can use the command `jupyter notebook` or `ipython notebook` and navigate to the notebook file in the browser window that opens. Follow the instructions in the notebook and answer each question presented to successfully complete the project. A **README** file has also been provided with the project files which may contain additional necessary information or instruction for the project. 
+### Arquivos para envio
+Quando você estiver pronto para enviar o projeto, reúna os seguintes arquivos e os comprima em um único arquivo para upload. Outra maneira seria fornecer os seguintes arquivos no seu repositório do GitHub, em uma pasta nomeada `boston_housing`, para facilitar o acesso:
 
-## Submitting the Project
+- O arquivo do Notebook `boston_housing.ipynb` com todas as perguntas respondidas e todos os blocos de código executados e exibindo a saída.
+- Um arquivo **em HTML** com o nome `report.html` exportado do Notebook do projeto. Esse arquivo deve estar presente para que seu projeto seja avaliado.
 
-### Evaluation
-Your project will be reviewed by a Udacity reviewer against the **<a href="https://review.udacity.com/#!/rubrics/103/view" target="_blank">Predicting Boston Housing Prices project rubric</a>**. Be sure to review this rubric thoroughly and self-evaluate your project before submission. All criteria found in the rubric must be *meeting specifications* for you to pass.
+Após reunir esses arquivos e ler a rubrica do projeto, vá até a página de envio. 
 
-### Submission Files
-When you are ready to submit your project, collect the following files and compress them into a single archive for upload. Alternatively, you may supply the following files on your GitHub Repo in a folder named `boston_housing` for ease of access:
- - The `boston_housing.ipynb` notebook file with all questions answered and all code cells executed and displaying output.
- - An **HTML** export of the project notebook with the name **report.html**. This file *must* be present for your project to be evaluated.
+### Estou pronto!
+Quando estiver pronto para enviar seu projeto, clique no botão **enviar projeto**, no fim desta página.
 
-Once you have collected these files and reviewed the project rubric, proceed to the project submission page.
+Caso você tenha qualquer problema ao enviar seu projeto ou deseje checar o status, envie um e-mail para **ml-suporte@udacity.com** ou visite nosso [fórum de discussão](https://discussions.udacity.com/c/nd009-model-evaluation-and-validation/nd009-br-predicting-boston-housing-prices).
 
-### I'm Ready!
-When you're ready to submit your project, click on the **Submit Project** button at the bottom of the page.
-
-If you are having any problems submitting your project or wish to check on the status of your submission, please email us at **machine-support@udacity.com** or visit us in the <a href="http://discussions.udacity.com" target="_blank">discussion forums</a>.
-
-### What's Next?
-You will get an email as soon as your reviewer has feedback for you. In the meantime, review your next project and feel free to get started on it or the courses supporting it!
+### E agora?
+Você receberá um e-mail assim que seu revisor tiver seu feedback pronto. Enquanto isso, leia seu próximo projeto e sinta-se à vontade para começá-lo - ou outros cursos que possam ajudar!
