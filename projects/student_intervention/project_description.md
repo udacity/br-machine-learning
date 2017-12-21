@@ -1,50 +1,54 @@
-# Content: Supervised Learning
-## Project: Creating a Student Intervention System
+# Conteúdo: Aprendizagem supervisionada
+## Projeto: Criando um Sistema de Intervenção para Estudantes
 
-## Project Overview
-As education has grown to rely more on technology, vast amounts of data has become available for examination and prediction. Logs of student activities, grades, interactions with teachers and fellow students, and more, are now captured in real time through learning management systems like **Canvas** and **Edmodo**. This is especially true for online classrooms, which are becoming popular even at the primary and secondary school level. Within all levels of education, there exists a push to help increase the likelihood of student success, without watering down the education or engaging in behaviors that fail to improve the underlying issues. Graduation rates are often the criteria of choice, and educators seek new ways to predict the success and failure of students early enough to stage effective interventions.
+## Visão geral do projeto
 
-## Description
-A local school district has a goal to reach a 95% graduation rate by the end of the decade by identifying students who need intervention before they drop out of school. As a software engineer contacted by the school district, your task is to model the factors that predict how likely a student is to pass their high school final exam, by constructing an intervention system that leverages supervised learning techniques. The board of supervisors has asked that you find the most effective model that uses the least amount of computation costs to save on the budget. You will need to analyze the dataset on students' performance and develop a model that will predict the likelihood that a given student will pass, quantifying whether an intervention is necessary.
+Com o aumento do uso da tecnologia na educação, uma vasta quantidade de dados foi disponibilizada para avaliação e predição. Registros das atividades dos alunos, notas, interações com os professores e colegas, entre outros, agora são captados em tempo real por sistemas de gerenciamento de aprendizagem como o **Canvas** e o **Edmodo**. Esse fenômeno é particularmente forte em aulas à distância, que estão tornando-se populares até mesmo no Ensino Fundamental e Médio. Dentro de todos os níveis da educação, existe um impulso para aumentar a probabilidade de sucesso do aluno sem diluir a educação nem encorajar comportamentos que não vão melhorar os problemas na raiz. A taxa de graduação frequentemente é o critério preferencial, e os educadores procuram novas maneiras de predizer o sucesso ou o fracasso dos estudantes cedo o bastante para organizar intervenções eficazes.
 
-## Software Requirements
-This project uses the following software and Python libraries:
+## Descrição
+Um distrito escolar da região tem como objetivo alcançar 95% de taxa de graduação até o fim da década, identificando alunos que precisam de intervenção antes que eles abandonem a escola. Como um engenheiro de software contratado pelo distrito escolar, sua tarefa é modelar os fatores que predizem a probabilidade de os alunos passarem na avaliação final do Ensino Médio, por meio de um sistema de intervenção baseado em técnicas de aprendizagem supervisionada. O conselho escolar pede que você encontre o modelo mais eficiente que tenha o menor custo computacional para poupar no orçamento. Você precisará analisar o conjunto de dados do desempenho escolar dos estudantes e desenvolver um modelo que preverá a probabilidade de um dado estudante passar, quantificando se uma intervenção é necessária.
+
+
+## Software e bibliotecas
+Este projeto usará o seguinte software e bibliotecas de Python:
 
 - [Python 2.7](https://www.python.org/download/releases/2.7/)
 - [NumPy](http://www.numpy.org/)
 - [pandas](http://pandas.pydata.org/)
-- [scikit-learn](http://scikit-learn.org/0.17/install.html) (v0.17)
+- [scikit-learn](http://scikit-learn.org/stable/)
+- [matplotlib](http://matplotlib.org/)
+- [Jupyter Notebook](http://ipython.org/notebook.html)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html).
+Caso você não tenha o Python instalado ainda, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads) de Python, que já tem os pacotes acima e mais alguns inclusos. Certifique-se de que você selecionou o instalador do Python 2.7 e não o instalador do Python 3.x.
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
 
-## Starting the Project
-For this assignment, you can find the `student_intervention` folder containing the necessary project files on the [Machine Learning projects GitHub](https://github.com/udacity/machine-learning), under the `projects` folder. You may download all of the files for projects we'll use in this Nanodegree program directly from this repo. Please make sure that you use the most recent version of project files when completing a project!
+## Começando o projeto
+Para esta tarefa, você encontrará o arquivo `student_intervention.zip`, que contém os arquivos necessários do projeto para download na seção **Recursos**. *Você também pode visitar nosso [GitHub de projetos de machine learning](https://github.com/udacity/br-machine-learning) para ter acesso a todos os projetos disponíveis para este Nanodegree.*
 
-This project contains two files:
+Este projeto contém dois arquivos:
 
-- `student_intervention.ipynb`: This is the main file where you will be performing your work on the project.
-- `student-data.csv`: The project dataset. You?ll load this data in the notebook.
+* `student_intervention_PT.ipynb`: este é o arquivo principal em que você executará sua tarefa do projeto.
 
-In the Terminal or Command Prompt, navigate to the folder containing the project files, and then use the command `jupyter notebook student_intervention.ipynb` to open up a browser window or tab to work with your notebook. Alternatively, you can use the command `jupyter notebook` or `ipython notebook` and navigate to the notebook file in the browser window that opens. Follow the instructions in the notebook and answer each question presented to successfully complete the project. A **README** file has also been provided with the project files which may contain additional necessary information or instruction for the project. 
+* `student-data.csv`: o conjunto de dados do projeto. Você vai carregar esses dados no notebook.
 
-## Submitting the Project
+No Terminal ou no Command Prompt, navegue até a pasta que contém os arquivos do projeto e, então, utilize o comando `jupyter notebook student_intervention_PT.ipynb` para abrir uma janela ou aba do navegador para trabalhar com seu notebook. Outra alternativa é utilizar o comando `jupyter notebook` ou `ipython notebook` e navegar até o arquivo do notebook na janela do navegador que abriu. Siga as instruções no notebook e responda a cada uma das perguntas apresentadas para concluir o projeto com sucesso. Um arquivo **README** também está incluído nos arquivos do projeto. Ele pode conter informações adicionais ou instruções para sua realização.
 
-### Evaluation
-Your project will be reviewed by a Udacity reviewer against the **<a href="https://review.udacity.com/#!/rubrics/104/view" target="_blank">Building a Student Intervention System project rubric</a>**. Be sure to review this rubric thoroughly and self-evaluate your project before submission. All criteria found in the rubric must be *meeting specifications* for you to pass.
+## Enviando o projeto
+### Avaliação
+Seu projeto será avaliado por um revisor da Udacity, de acordo com a [rubrica do projeto](https://review.udacity.com/#!/rubrics/388/view). Certifique-se de ler a rubrica cuidadosamente e autoavaliar-se antes de enviar o projeto: ele deve atender a **todas as especificações** listadas nela para ser aprovado.
 
-### Submission Files
-When you are ready to submit your project, collect the following files and compress them into a single archive for upload. Alternatively, you may supply the following files on your GitHub Repo in a folder named `student_intervention` for ease of access:
- - The `student_intervention.ipynb` notebook file with all questions answered and all code cells executed and displaying output.
- - An **HTML** export of the project notebook with the name **report.html**. This file *must* be present for your project to be evaluated.
+### Arquivos para envio
+Quando estiver pronto para enviar seu projeto, reúna os arquivos abaixo e os comprima em um único arquivo para upload. Outra maneira seria fornecê-los em seu repositório do GitHub, em uma pasta nomeada `student_intervention`, para facilitar o acesso.
 
-Once you have collected these files and reviewed the project rubric, proceed to the project submission page.
+- O arquivo do notebook `student_intervention_PT.ipynb `, com todas as perguntas respondidas e todos os blocos de código executados e exibindo a saída.
+- Um arquivo **em HTML**, com o nome `report.html`, exportado do notebook do projeto. Esse arquivo deve estar presente para que seu projeto seja avaliado.
 
-### I'm Ready!
-When you're ready to submit your project, click on the **Submit Project** button at the bottom of the page.
+Após reunir esses arquivos e ler a rubrica do projeto, vá até a página de envio de projeto.
 
-If you are having any problems submitting your project or wish to check on the status of your submission, please email us at **machine-support@udacity.com** or visit us in the <a href="http://discussions.udacity.com" target="_blank">discussion forums</a>.
+### Estou pronto!
+Quando você estiver pronto para enviar seu projeto, clique no botão "Enviar Projeto", no fim desta página.
 
-### What's Next?
-You will get an email as soon as your reviewer has feedback for you. In the meantime, review your next project and feel free to get started on it or the courses supporting it!
+Caso você tenha qualquer problema ao enviar seu projeto ou queira checar o status de seu envio, envie um e-mail para ml-suporte@udacity.com ou visite nosso [fórum de discussão](https://discussions.udacity.com/c/nd009-supervised-learning/nd009-br-building-a-student-intervention-system).
+
+### E agora?
+Você receberá um e-mail assim que seu revisor tiver seu feedback pronto. Enquanto isso, leia seu próximo projeto e sinta-se à vontade para começá-lo ou assistir às próximas aulas!

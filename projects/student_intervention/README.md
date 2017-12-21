@@ -1,63 +1,59 @@
-# Project 2: Supervised Learning
-## Building a Student Intervention System
+# Projeto 2: Aprendizagem supervisionada
 
-### Install
-
-This project requires **Python 2.7** and the following Python libraries installed:
+## Criando um Sistema de Intervenção para Estudantes
+### Instalação
+Este projeto requer **Python 2.7** e as seguintes bibliotecas Python instaladas:
 
 - [NumPy](http://www.numpy.org/)
-- [Pandas](http://pandas.pydata.org)
+- [Pandas](http://pandas.pydata.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
+Você também precisará ter software instalado para rodar e executar um [iPython Notebook](http://ipython.org/notebook.html)
 
-Udacity recommends our students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+A Udacity recomenda que os estudantes instalem [Anaconda](https://www.continuum.io/downloads), uma distribuição Python que contém todas as bibliotecas e software necessários para este projeto. 
 
-### Code
+### Código
+Um modelo de código é fornecido no arquivo notebook `student_intervention_PT.ipynb`. Mesmo que parte do código já tenha sido fornecida para ajudá-lo a começar, você precisará implementar funcionalidades adicionais em alguns pontos para conseguir completar o projeto com sucesso.
 
-Template code is provided in the notebook `student_intervention.ipynb` notebook file. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project.
+### Execução
+Em um terminal ou janela de comando, navegue até o diretório raiz de projeto `student_intervention/` (que contém este README) e execute os seguintes comandos:
 
-### Run
+```ipython notebook student_intervention_PT.ipynb```  
+```jupyter notebook student_intervention_PT.ipynb```
 
-In a terminal or command window, navigate to the top-level project directory `student_intervention/` (that contains this README) and run one of the following commands:
+Isso abrirá o o software e arquivo de projeto Jupyter Notebook em seu navegador.
 
-```ipython notebook student_intervention.ipynb```  
-```jupyter notebook student_intervention.ipynb```
+## Dados
+Os dados usados neste projeto estão incluídos em `student-data.csv`. O conjunto de dados possui os seguintes atributos:
 
-This will open the iPython Notebook software and project file in your browser.
-
-## Data
-
-The dataset used in this project is included as `student-data.csv`. This dataset has the following attributes:
-
-- `school` : student's school (binary: "GP" or "MS")
-- `sex` : student's sex (binary: "F" - female or "M" - male)
-- `age` : student's age (numeric: from 15 to 22)
-- `address` : student's home address type (binary: "U" - urban or "R" - rural)
-- `famsize` : family size (binary: "LE3" - less or equal to 3 or "GT3" - greater than 3)
-- `Pstatus` : parent's cohabitation status (binary: "T" - living together or "A" - apart)
-- `Medu` : mother's education (numeric: 0 - none,  1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education)
-- `Fedu` : father's education (numeric: 0 - none,  1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education)
-- `Mjob` : mother's job (nominal: "teacher", "health" care related, civil "services" (e.g. administrative or police), "at_home" or "other")
-- `Fjob` : father's job (nominal: "teacher", "health" care related, civil "services" (e.g. administrative or police), "at_home" or "other")
-- `reason` : reason to choose this school (nominal: close to "home", school "reputation", "course" preference or "other")
-- `guardian` : student's guardian (nominal: "mother", "father" or "other")
-- `traveltime` : home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
-- `studytime` : weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours)
-- `failures` : number of past class failures (numeric: n if 1<=n<3, else 4)
-- `schoolsup` : extra educational support (binary: yes or no)
-- `famsup` : family educational support (binary: yes or no)
-- `paid` : extra paid classes within the course subject (Math or Portuguese) (binary: yes or no)
-- `activities` : extra-curricular activities (binary: yes or no)
-- `nursery` : attended nursery school (binary: yes or no)
-- `higher` : wants to take higher education (binary: yes or no)
-- `internet` : Internet access at home (binary: yes or no)
-- `romantic` : with a romantic relationship (binary: yes or no)
-- `famrel` : quality of family relationships (numeric: from 1 - very bad to 5 - excellent)
-- `freetime` : free time after school (numeric: from 1 - very low to 5 - very high)
-- `goout` : going out with friends (numeric: from 1 - very low to 5 - very high)
-- `Dalc` : workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
-- `Walc` : weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
-- `health` : current health status (numeric: from 1 - very bad to 5 - very good)
-- `absences` : number of school absences (numeric: from 0 to 93)
-- `passed` : did the student pass the final exam (binary: yes or no)
+- `school` : escola do estudante (binário: "GP" ou "MS")
+- `sex` : sexo do estudante (binário: "F" - feminino ou "M" - masculino)
+- `age` : idade do estudante (numérico: de 15 a 22)
+- `address` : tipo de endereço do estudante (binário: "U" - urbano ou "R" - rural)
+- `famsize` : tamanho da família (binário: "LE3" - até 3 pessoas ou "GT3" - mais de 3)
+- `Pstatus` : situação de coabitação parental (binário: "T" - vivendo juntos ou "A" - separados)
+- `Medu` : nível de escolaridade da mãe (numérico: 0 - nenhum,  1 - educação primária (até quarto ano), 2 - quinto a nono ano, 3 - ensino médio ou 4 - educação superior)
+- `Fedu` : nível de escolaridade do pai (numérico: 0 - nenhum,  1 - educação primária (até quarto ano), 2 - quinto a nono ano, 3 - ensino médio ou 4 - educação superior)
+- `Mjob` : profissão da mãe (nominal: "teacher" (professora), "health" (relacionado à saúde), "services" (ex. cargo administrativo ou policial), "at_home" (de casa) ou "other" (outros))
+- `Fjob` : profissão do pai (nominal: "teacher" (professor), "health" (relacionado à saúde), "services" (ex. cargo administrativo ou policial), "at_home" (de casa) ou "other" (outros))
+- `reason` : razão para escolher a escola (nominal: "home" (proximidade), "reputation" (reputação), "course" (preferência do curso) ou "other" (outro))
+- `guardian` : responsável pelo estudante (nominal: "mother" (mãe), "father" (pai) ou "other" (outro))
+- `traveltime` : tempo do trajeto casa-escola (numérico: 1 - <15 min., 2 - 15 a 30 min., 3 - 30 min. a 1 hora, ou 4 - >1 hora)
+- `studytime` : tempo semanal de estudo (numérico: 1 - <2 horas, 2 - 2 a 5 horas, 3 - 5 a 10 horas, ou 4 - >10 horas)
+- `failures` : número de reprovações passadas (numérico: n se 1<=n<3, senão 4)
+- `schoolsup` : suporte educacional extra (binário: sim ou não)
+- `famsup` : suporte educacional familiar (binário: sim ou não)
+- `paid` : classes pagas extras dentre as matérias curriculares (Matemática ou Português) (binário: sim ou não)
+- `activities` : atividades extra-curriculares (binário: sim ou não)
+- `nursery` : frequentou educação infantil (binário: sim não)
+- `higher` : pretende cursar educação superior (binário: sim ou não)
+- `internet` : Acesso à internet em casa (binário: sim ou não)
+- `romantic` : em um relacionamento afetivo (binário: sim ou não)
+- `famrel` : qualidade das relações familiares (numérico: de 1 - muito ruim a 5 - excelente)
+- `freetime` : tempo livre depois da escola (numérico: de 1 - muito baixo a 5 - muito alto)
+- `goout` : frequência de saída com os amigos (numérico: de 1 - muito baixa a 5 - muito alta)
+- `Dalc` : consumo de álcool durante dias úteis (numérico: de 1 - muito baixo a 5 - muito alto)
+- `Walc` : consumo de álcool durante os fins de semana (numérico: de 1 - muito baixo a 5 - muito alto)
+- `health` : estado atual de saúde (numérico: de 1 - muito ruim a 5 - muito bom)
+- `absences` : número de faltas na escola (numérico: de 0 a 93)
+- `passed` : se o estudante passou no exame final (binário: sim ou não)
