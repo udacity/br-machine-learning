@@ -1,15 +1,15 @@
-# Content: Reinforcement Learning
-## Project: Train a Smartcab How to Drive
+# Nanodegree Engenheiro de Machine Learning
+# Aprendizagem por reforço
+## Projeto: Ensinando um SmartCab a Dirigir
 
-## Project Overview
+## Visão geral do projeto
+Neste projeto, você aplicará técnicas de aprendizagem por reforço para um agente autocondutor em um mundo simplificado, auxiliando-o a chegar de maneira efetiva até seus destinos em um tempo específico. Primeiro, você investigará o ambiente em que o agente opera, implementando um algoritmo de direção bastante básico. Uma vez que o agente foi bem-sucedido ao operar dentro do ambiente, você então identificará cada possível estado em que o agente pode estar, considerando situações como semáforo e tráfego de sentido contrário em cada intersecção. Com os estados identificados, você implementará um algoritmo Q-Learning para o agente autocondutor ser guiado até seu destino dentro do tempo estimado. Por fim, você melhorará o algoritmo Q-Learning em que já trabalhou para encontrar a melhor configuração de aprendizagem e fatores de exploração que asseguram que o agente autocondutor chegue a seu destino com resultados positivos de forma consistente.
 
-In this project you will apply reinforcement learning techniques for a self-driving agent in a simplified world to aid it in effectively reaching its destinations in the allotted time. You will first investigate the environment the agent operates in by constructing a very basic driving implementation. Once your agent is successful at operating within the environment, you will then identify each possible state the agent can be in when considering such things as traffic lights and oncoming traffic at each intersection. With states identified, you will then implement a Q-Learning algorithm for the self-driving agent to guide the agent towards its destination within the allotted time. Finally, you will improve upon the Q-Learning algorithm to find the best configuration of learning and exploration factors to ensure the self-driving agent is reaching its destinations with consistently positive results.
+## Descrição
+Em um futuro não tão distante, empresas de táxi dos Estados Unidos não mais contratarão condutores humanos para operar sua frota de veículos. Em vez disso, os táxis serão operados por agentes autocondutores — conhecido como _smartcabs_ ou táxis inteligentes —, transportando pessoas de um local para outro dentro das cidades onde essas empresas operam. Na maiorias das áreas metropolitanas, como Chicago, Nova Iorque e São Francisco, um crescente número de pessoas começou a confiar nos táxis inteligentes para chegar aonde precisam ir da maneira mais segura e eficiente possível. Embora táxis inteligentes tenham se tornado o transporte mais utilizado, surgem preocupações de que um agente autocondutor talvez não seja seguro ou eficiente como os condutores humanos, especialmente quando considerados os semáforos da cidade ou outros veículos. Para aliviar essa situação, sua tarefa como funcionário de uma empresa nacional de táxis é usar técnicas de aprendizagem por reforço para desenvolver uma demonstração de operação dos táxis inteligentes em tempo real e provar que ambas a segurança e a eficiência podem ser alcançadas.
 
-## Description
-In the not-so-distant future, taxicab companies across the United States no longer employ human drivers to operate their fleet of vehicles. Instead, the taxicabs are operated by self-driving agents, known as *smartcabs*, to transport people from one location to another within the cities those companies operate. In major metropolitan areas, such as Chicago, New York City, and San Francisco, an increasing number of people have come to depend on *smartcabs* to get to where they need to go as safely and reliably as possible. Although *smartcabs* have become the transport of choice, concerns have arose that a self-driving agent might not be as safe or reliable as human drivers, particularly when considering city traffic lights and other vehicles. To alleviate these concerns, your task as an employee for a national taxicab company is to use reinforcement learning techniques to construct a demonstration of a *smartcab* operating in real-time to prove that both safety and reliability can be achieved.
-
-## Software Requirements
-This project uses the following software and Python libraries:
+## Requisitos de software
+Este projeto usará os seguintes software e bibliotecas de Python:
 
 - [Python 2.7](https://www.python.org/download/releases/2.7/)
 - [NumPy](http://www.numpy.org/)
@@ -17,91 +17,76 @@ This project uses the following software and Python libraries:
 - [matplotlib](http://matplotlib.org/)
 - [PyGame](http://pygame.org/)
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer. `pygame` can then be installed using one of the following commands:
+Caso você não tenha o Python instalado ainda, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads), que já contém os pacotes acima inclusos, entre outros. Certifique-se de selecionar o instalador do Python 2.7, e não o instalador do Python 3.x. O pygame pode, então, ser instalando usando um dos seguintes comandos:
 
 Mac:  `conda install -c https://conda.anaconda.org/quasiben pygame`  
-Windows: `conda install -c https://conda.anaconda.org/prkrekel pygame`  
-Linux:  `conda install -c https://conda.anaconda.org/tlatorre pygame`  
+Linux: `conda install -c https://conda.anaconda.org/tlatorre pygame`  
+Windows:  `conda install -c https://conda.anaconda.org/prkrekel pygame`    
 
-## Fixing Common PyGame Problems
-
-The PyGame library can in some cases require a bit of troubleshooting to work correctly for this project. While the PyGame aspect of the project is not required for a successful submission  (you can complete the project without a visual simulation, although it is more difficult), it is very helpful to have it working! If you encounter an issue with PyGame, first see these helpful links below that are developed by communities of users working with the library:
+## Corrigindo problemas do PyGame
+A biblioteca PyGame pode, em alguns casos, demandar alguns ajustes para funcionar corretamente para esse projeto. As funções do PyGame são necessárias para interface gráfica, mas não é obrigatória sua execução. No entanto, é muito mais fácil e divertido interagir com uma interface. Caso você tenha tido algum problema, veja alguns links úteis para te ajudar a resolver:
 - [Getting Started](https://www.pygame.org/wiki/GettingStarted)
 - [PyGame Information](http://www.pygame.org/wiki/info)
 - [Google Group](https://groups.google.com/forum/#!forum/pygame-mirror-on-google-groups)
 - [PyGame subreddit](https://www.reddit.com/r/pygame/)
 
-### Problems most often reported by students
-_"PyGame won't install on my machine; there was an issue with the installation."_  
-**Solution:** As has been recommended for previous projects, Udacity suggests that you are using the Anaconda distribution of Python, which can then allow you to install PyGame through the `conda`-specific command.
+### Problemas mais reportados por alunos
+_"PyGame não instala na minha máquina; teve um problema na instalação."_
+  
+**Solução:** Como recomendado em outros projetos, a Udacity recomenda que você utilize a distribuição Python do Anaconda, o qual permite instalar o Pygame pelo comando `conda` específico.
 
-_"I'm seeing a black screen when running the code; output says that it can't load car images."_  
-**Solution:** The code will not operate correctly unless it is run from the top-level directory for `smartcab`. The top-level directory is the one that contains the **README** and the project notebook.
+_"Eu estou vendo uma tela preta enquanto o código executa; o *output* diz que que não pode carregar imagens de carros."_  
+**Solução:** O código não executará corretamente se não for executado do diretório acima do `smartcab`. O diretório acima é aquele que contém o arquivo **README** e o notebook do projeto.
 
-If you continue to have problems with the project code in regards to PyGame, you can also [use the discussion forums](https://discussions.udacity.com/c/nd009-reinforcement-learning) to find posts from students that encountered issues that you may be experiencing. Additionally, you can seek help from a swath of students in the [MLND Student Slack Community](http://mlnd.slack.com).
+Se você ainda tiver problemas para executar o projeto com o PyGame, você pode utilizar o [fórum de discussão](https://discussions.udacity.com/c/nd009-reinforcement-learning) para ver postagens relacionadas com o seu problema. Você também pode procurar ajuda com os alunos no Slack.
 
-## Starting the Project
+## Começando o projeto
+Para essa tarefa, você encontrará o arquivo smartcab.zip, que contém os arquivos necessários do projeto para download na seção "Recursos". *Você também pode visitar nosso**[GitHub de projetos de machine ,earning](https://github.com/udacity/br-machine-learning) para ter acesso a todos os projetos disponíveis para este Nanodegree.*
+Este projeto contém três diretórios:
+- `/logs/`: essa pasta contém todos os registros fornecidos pelo simulador quando pré-requisitos específicos são satisfeitos.
+- `/images/`: essa pasta contém várias imagens de carros que podem ser utilizadas na interface gráfica do usuário. Você não precisará modificar nem criar nenhum arquivo nesse diretório.
+- `/smartcab/`: essa pasta contém os scripts de Python que criarão o ambiente, a interface gráfica do usuário, a simulação e os agentes. Você não precisará modificar nem criar nenhum arquivo nesse diretório, exceto pelo agent.py.
 
-For this assignment, you can find the `smartcab` folder containing the necessary project files on the [Machine Learning projects GitHub](https://github.com/udacity/machine-learning), under the `projects` folder. You may download all of the files for projects we'll use in this Nanodegree program directly from this repo. Please make sure that you use the most recent version of project files when completing a project!
+Também há dois arquivos:
+- `smartcab.ipynb`: este é o arquivo em que você vai responder às questões e fazer uma análise de seu trabalho.
+- `visuals.py`: este script traz funções de visualização para complementar a análise. **Não o modifique**.
 
-This project contains three directories:
+No `/smartcab/` há os seguintes arquivos:
 
-- `/logs/`: This folder will contain all log files that are given from the simulation when specific prerequisites are met.
-- `/images/`: This folder contains various images of cars to be used in the graphical user interface. You will not need to modify or create any files in this directory.
-- `/smartcab/`: This folder contains the Python scripts that create the environment, graphical user interface, the simulation, and the agents. You will not need to modify or create any files in this directory except for `agent.py`.
+- Modifique:
+  - `agent.py` esse é o arquivo principal de Python em que você irá executar seu trabalho deste projeto.
+- **Não o modifique**:
+  - `environment.py`: esse arquivo de Python criará o ambiente do táxi inteligente.
+  - `planner.py`: esse arquivo de Python criará um planejador de alto nível para que o agente siga em direção a um objetivo definido.
+  - `simulation.py`: esse arquivo de Python criará a simulação e a interface gráfica do usuário.
 
-It also contains two files:
-- `smartcab.ipynb`: This is the main file where you will answer questions and provide an analysis for your work.
--`visuals.py`: This Python script provides supplementary visualizations for the analysis. Do not modify.
+### Compilando o código
+No terminal ou na janela de comando, navegue até o nível superior do diretório (que contém os dois diretórios do projeto) e execute os seguintes comandos:
 
-Finally, in `/smartcab/` are the following four files:
-- **Modify:**
-  - `agent.py`: This is the main Python file where you will be performing your work on the project.
-- **Do not modify:**
-  - `environment.py`: This Python file will create the *smartcab* environment.
-  - `planner.py`: This Python file creates a high-level planner for the agent to follow towards a set goal.
-  - `simulation.py`: This Python file creates the simulation and graphical user interface. 
+`python smartcab/agent.py` ou
 
-### Running the Code
-In a terminal or command window, navigate to the top-level project directory `smartcab/` (that contains the two project directories) and run one of the following commands:
-
-`python smartcab/agent.py` or  
 `python -m smartcab.agent`
 
-This will run the `agent.py` file and execute your implemented agent code into the environment. Additionally, use the command `jupyter notebook smartcab.ipynb` from this same directory to open up a browser window or tab to work with your analysis notebook. Alternatively, you can use the command `jupyter notebook` or `ipython notebook` and navigate to the notebook file in the browser window that opens. Follow the instructions in the notebook and answer each question presented to successfully complete the implementation necessary for your `agent.py` agent file. A **README** file has also been provided with the project files which may contain additional necessary information or instruction for the project.
+Isso executará o arquivo `agent.py` e o código do agente implementado dentro do ambiente.
 
-## Definitions
+O comando `jupyter notebook smartcab.ipynb` pode ser executado no mesmo diretório para abrir o notebook no navegador, para que você possa fazer a análise. Alternativamente, você pode usar o comando `jupyter notebook` dentro da pasta do projeto e usar a interface aberta no navegador para abrir o notebook. Siga as instruções nele contidas e responda a cada questão cuidadosamente para completar a implementação necessária de seu agente.
 
-### Environment
-The *smartcab* operates in an ideal, grid-like city (similar to New York City), with roads going in the North-South and East-West directions. Other vehicles will certainly be present on the road, but there will be no pedestrians to be concerned with. At each intersection there is a traffic light that either allows traffic in the North-South direction or the East-West direction. U.S. Right-of-Way rules apply: 
-- On a green light, a left turn is permitted if there is no oncoming traffic making a right turn or coming straight through the intersection.
-- On a red light, a right turn is permitted if no oncoming traffic is approaching from your left through the intersection.
-To understand how to correctly yield to oncoming traffic when turning left, you may refer to [this official drivers? education video](https://www.youtube.com/watch?v=TW0Eq2Q-9Ac), or [this passionate exposition](https://www.youtube.com/watch?v=0EdkxI6NeuA).
+O arquivo **README** também foi incluído, contendo informações necessárias adicionais ou instruções para o projeto.
 
-### Inputs and Outputs
-Assume that the *smartcab* is assigned a route plan based on the passengers? starting location and destination. The route is split at each intersection into waypoints, and you may assume that the *smartcab*, at any instant, is at some intersection in the world. Therefore, the next waypoint to the destination, assuming the destination has not already been reached, is one intersection away in one direction (North, South, East, or West). The *smartcab* has only an egocentric view of the intersection it is at: It can determine the state of the traffic light for its direction of movement, and whether there is a vehicle at the intersection for each of the oncoming directions. For each action, the *smartcab* may either idle at the intersection, or drive to the next intersection to the left, right, or ahead of it. Finally, each trip has a time to reach the destination which decreases for each action taken (the passengers want to get there quickly).  If the allotted time becomes zero before reaching the destination, the trip has failed.
+## Definições
+### Ambiente
+O táxi inteligente opera em uma cidade ideal, em forma de malha (similar à cidade de Nova Iorque), com ruas indo nas direções Norte-Sul e Leste-Oeste. Outros veículos certamente estarão presentes na cidade, mas não haverá pedestres para se preocupar. A cada intersecção há um semáforo que permite tráfego tanto na direção Norte-Sul como na Leste-Oeste. A cidade segue as regras norte-americanas de trânsito:
+- No sinal verde, é permitido virar à esquerda se não houver nenhum tráfego no sentido contrário fazendo curva à direita ou indo reto pela intersecção.
+- No sinal vermelho, curva à direita é permitido se não houver nenhum tráfego no sentido contrário se aproximando à sua esquerda, pela intersecção. Para entender como conduzir corretamente o tráfego de sentido contrário ao virar à esquerda, você pode assistir a [este vídeo oficial sobre educação de condutores](https://www.youtube.com/watch?v=TW0Eq2Q-9Ac) ou [esta palestra animada](https://www.youtube.com/watch?v=0EdkxI6NeuA).
 
-### Rewards and Goal
-The *smartcab* will receive positive or negative rewards based on the action it as taken. Expectedly, the *smartcab* will receive a small positive reward when making a good action, and a varying amount of negative reward dependent on the severity of the traffic violation it would have committed. Based on the rewards and penalties the *smartcab* receives, the self-driving agent implementation should learn an optimal policy for driving on the city roads while obeying traffic rules, avoiding accidents, and reaching passengers? destinations in the allotted time.
+### Entradas e saídas
+Suponha que é atribuído ao táxi inteligente um plano de rota baseado na localização inicial e no destino do passageiro. A rota é dividida a cada intersecção em um ponto de navegação, e você pode assumir que o táxi inteligente, a qualquer instante, está em alguma interseção no mundo. Portanto, o próximo ponto de navegação para o destino, assumindo que o destino ainda não foi alcançado, é uma interseção distante em uma direção (Norte, Sul, Leste ou Oeste). O táxi inteligente tem apenas uma visão egocêntrica da interseção, que é: ele pode determinar o estado do semáforo adequado à sua direção, e se há um veículo na interseção para cada uma das direções contrárias. Para cada ação, o táxi inteligente pode ficar ocioso na interseção ou dirigir para a próxima interseção à esquerda, à direita ou em frente. Por último, cada viagem tem um tempo para alcançar o destino que diminui a cada ação tomada (os passageiros querem chegar a seu destino rapidamente). Se o tempo atribuído torna-se zero antes de alcançar o destino, a viagem falhou.
 
-## Submitting the Project
+### Recompensas e objetivos
+O táxi inteligente recebe uma recompensa a cada viagem bem-sucedida e também recebe recompensas menores por cada ação que ele executa com sucesso e obedecendo às leis de trânsito. O táxi inteligente recebe pequenas penalidade para cada ação incorreta, e grandes penalidades para cada ação que viole as leis de trânsito ou que cause um acidente com outro veículo. Baseado nas recompensas e penalidade que o táxi inteligente recebe, a implementação do agente autocondutor deverá aprender um política ótima para dirigir nas estradas da cidade enquanto obedece às leis de trânsito, evitando acidentes e alcançando o destino dos passageiros no tempo determinado.
 
-### Evaluation
-Your project will be reviewed by a Udacity reviewer against the **<a href="https://review.udacity.com/#!/rubrics/106/view" target="_blank">Train a Smartcab to Drive project rubric</a>**. Be sure to review this rubric thoroughly and self-evaluate your project before submission. All criteria found in the rubric must be *meeting specifications* for you to pass.
+### Avaliação
+Esse projeto não é avaliado ou obrigatório. No entanto, você pode verificar os items da [rubrica do projeto](https://review.udacity.com/#!/rubrics/106/view) para ter certeza que você fez tudo corretamente.
 
-### Submission Files
-When you are ready to submit your project, collect the following files and compress them into a single archive for upload. Alternatively, you may supply the following files on your GitHub Repo in a folder named `smartcab` for ease of access:
-- The `agent.py` Python file with all code implemented as required in the instructed tasks.
-- The `/logs/` folder which should contain **five** log files that were produced from your simulation and used in the analysis.
-- The `smartcab.ipynb` notebook file with all questions answered and all visualization cells executed and displaying results.
- - An **HTML** export of the project notebook with the name **report.html**. This file *must* be present for your project to be evaluated.
-
-Once you have collected these files and reviewed the project rubric, proceed to the project submission page.
-
-### I'm Ready!
-When you're ready to submit your project, click on the **Submit Project** button at the bottom of the page.
-
-If you are having any problems submitting your project or wish to check on the status of your submission, please email us at **machine-support@udacity.com** or visit us in the <a href="http://discussions.udacity.com" target="_blank">discussion forums</a>.
-
-### What's Next?
-You will get an email as soon as your reviewer has feedback for you. In the meantime, review your next project and feel free to get started on it or the courses supporting it!
+### Estou pronto!
+Caso tenha qualquer problema para desenvolver seu projeto envie um e-mail para **ml-suporte@udacity.com**, visite nosso [fórum de discussão](http://discussions.udacity.com/) ou compartilhe no Slack.

@@ -1,21 +1,20 @@
-# Machine Learning Engineer Nanodegree
-# Reinforcement Learning
-## Project: Train a Smartcab How to Drive
+# Nanodegree Engenheiro de Machine Learning
+# Aprendizagem por reforço
+## Projeto: Ensinando um SmartCab a Dirigir
 
-### Install
+### Instalação
 
-This project requires **Python 2.7** with the [pygame](https://www.pygame.org/wiki/GettingStarted
-) library installed
+Este projeto requer **Python 2.7** com a biblioteca [pygame] (https://www.pygame.org/wiki/GettingStarted
+) instalada.
 
-### Code
+### Código
 
-Template code is provided in the `smartcab/agent.py` python file. Additional supporting python code can be found in `smartcab/enviroment.py`, `smartcab/planner.py`, and `smartcab/simulator.py`. Supporting images for the graphical user interface can be found in the `images` folder. While some code has already been implemented to get you started, you will need to implement additional functionality for the `LearningAgent` class in `agent.py` when requested to successfully complete the project. 
+Um modelo do código é fornecido no arquivo Python `smartcab/agent.py`. Códigos Python adicionais de apoio podem ser encontrados em `smartcab/enviroment.py`, `smartcab/planner.py`, e `smartcab/simulator.py`. Imagens de apoio para a interface gráfica de usuário podem ser encontradas na pasta `images`. Mesmo que parte do código já tenha sido fornecida para ajudá-lo a começar, você precisará implementar funcionalidades adicionais em alguns pontos para conseguir completar o projeto com sucesso. 
 
-### Run
-
-In a terminal or command window, navigate to the top-level project directory `smartcab/` (that contains this README) and run one of the following commands:
+### Execução
+Em um terminal ou janela de comando, navegue até o diretório raiz de projeto `smartcab/` (que contém este README) e execute os seguintes comandos:
 
 ```python smartcab/agent.py```  
 ```python -m smartcab.agent```
 
-This will run the `agent.py` file and execute your agent code.
+Isso rodará o arquivo `agent.py` e executará o código do seu agente.
