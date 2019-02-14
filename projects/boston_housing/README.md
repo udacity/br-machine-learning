@@ -4,9 +4,8 @@
 
 ### Instalação
 
-Este projeto requer **Python 2.7** (se você completar o projeto em Python 3.x, você precisará fazer o update do código em vários pontos, incluindo todos os prints relevantes) e as seguintes bibliotecas Python:
+Este projeto requer **Python 3.7**  e as seguintes bibliotecas Python:
 
-- [Python 2.7](https://www.python.org/download/releases/2.7/)
 - [NumPy](http://www.numpy.org/)
 - [pandas](http://pandas.pydata.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
@@ -14,7 +13,7 @@ Este projeto requer **Python 2.7** (se você completar o projeto em Python 3.x, 
 
 Você também precisará ter software instalado para rodar e executar um [Jupyter Notebook](http://ipython.org/notebook.html)
 
-Se você ainda não tem o Python instalado, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads), que já tem os pacotes acima incluídos. Certifique-se de selecionar o instalador Python 2.7, não o 3.x.
+Se você ainda não tem o Python instalado, é altamente recomendado que instale a distribuição [Anaconda](http://continuum.io/downloads), que já tem os pacotes acima incluídos. Certifique-se de selecionar o instalador Python 3.7.
 
 ### Código
 
