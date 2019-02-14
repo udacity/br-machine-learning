@@ -4,7 +4,7 @@
 
 ### Instalação
 
-Este projeto requer **Python 2.7** e as seguintes bibliotecas Python instaladas:
+Este projeto requer **Python 3.7** e as seguintes bibliotecas Python instaladas:
 
 - [NumPy](http://www.numpy.org/)
 - [Pandas](http://pandas.pydata.org/)
@@ -24,11 +24,11 @@ Um modelo do código é fornecido no arquivo notebook `finding_donors.ipynb`. Vo
 Em um terminal ou janela de comando, navegue até o diretório raiz de projeto `finding_donors/` (que contém este README) e execute os seguintes comandos:
 
 ```bash
-ipython notebook finding_donors.ipynb
+ipython notebook finding_donors_PT.ipynb
 ```  
 ou
 ```bash
-jupyter notebook finding_donors.ipynb
+jupyter notebook finding_donors_PT.ipynb
 ```
 
 Isso abrirá o o software e arquivo de projeto iPython Notebook em seu navegador.
